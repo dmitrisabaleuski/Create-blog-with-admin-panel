@@ -10,6 +10,10 @@
 		$action = "";
 
 	if($action == "add"){
+		if(!empty($_POST)){
+			articles_new($link, $_POST['title'], $_POST['date'], $_POST['content']);
+			header("Location: index.php");
+		};
 		include("../views/article_admin.php");
 	}
 	else{
